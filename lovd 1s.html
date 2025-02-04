@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>Bhavani</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+  <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+  <style>
+    #ki {
+      display: none; 
+      position: fixed; 
+      bottom: -200px; 
+      left: 50%; 
+      transform: translateX(-50%);
+      width: 200px; 
+      height: 200px; 
+    }
+  </style>
+</head>
+<body>
+  <center>
+  <div>
+    <p>Can I take you out for a date?</p>
+    <button id="yesButton">yes</button>
+    <button id="btn">no</button><br>
+    <img src="" alt="" id="ki">
+  </div>
+  </center>
+  <script>
+    $(document).ready(function() {
+      $("#btn").mouseover(function() {
+        var currentMargin = parseInt($(this).css("margin-left"), 10);
+        var newMargin = currentMargin + 50;
+        $(this).css("margin-left", newMargin + "px");
+      });
+
+      $("#yesButton").click(function() {
+        $("#ki")
+          .attr("src", "unnamed.png")
+          .css({ display: 'block', bottom: '-200px' }) 
+          .animate({ bottom: '0px' }, 2000); 
+      });
+    });
+
+    $("#yesButton").mouseover(function() {
+        $("body")
+          
+          .css({ background: "pink"}) 
+        
+      });
+      $("#yesButton").mouseleave(function() {
+        $("body")
+          
+          .css({ background: "white"}) 
+        
+      });
+  </script>
+</body>
+</html>
